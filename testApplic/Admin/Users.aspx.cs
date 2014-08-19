@@ -47,8 +47,9 @@ namespace testApplic.Admin
                 dr[1] = arr[i].UserName;
                 dr[2] = arr[i].UserName;
                 dr[3] = arr[i].Email;
-                foreach (var rl in Roles.GetRolesForUser(arr[i].UserName))
-                    dr[4] = rl + " ";
+                dr[4] = Roles.GetRolesForUser(arr[i].UserName).FirstOrDefault();
+                //foreach (var rl in Roles.GetRolesForUser(arr[i].UserName))
+                //    dr[4] = rl + " ";
                 dr[5] = "~/Admin/EditUser?Id=" + arr[i].UserName;
                 dt.Rows.Add(dr);
             }

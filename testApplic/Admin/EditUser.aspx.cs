@@ -49,7 +49,10 @@ namespace testApplic.Admin
             us = Membership.GetUser(userName);
             us.Email = Email.Text;
             Membership.UpdateUser(us);
-            Roles.AddUserToRole(us.UserName, Role.SelectedValue);
+            if (Roles.GetRolesForUser(us.UserName).Count()!=0)
+                Roles.RemoveUserFromRoles(us.UserName, Roles.GetRolesForUser(us.UserName));
+            if (!Role.SelectedValue.Equals("роль не установлена"))
+                Roles.AddUserToRole(us.UserName, Role.SelectedValue);
             Response.Redirect("~/Admin/Users");
         }
 
