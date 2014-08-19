@@ -14,12 +14,7 @@ namespace testApplic.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
-            string[] rls = Roles.GetAllRoles();
-            foreach (var rl in rls)
-            {
-                ListItem li = new ListItem(rl);
-                DropDownList1.Items.Add(li);
-            }
+            
         }
 
         protected void RegisterUser_CreatedUser(object sender, EventArgs e)

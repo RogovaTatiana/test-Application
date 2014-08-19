@@ -51,6 +51,7 @@
                                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="Пароль и его подтверждение не совпадают." />
                             </li>
+                            
                         </ol>
                         <asp:Button runat="server" CommandName="MoveNext" Text="Регистрация" />
                     </fieldset>
@@ -59,7 +60,4 @@
             </asp:CreateUserWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
-    <p> 
-        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-    </p>
 </asp:Content>
